@@ -20,7 +20,7 @@ http.createServer( (req,res) =>{
     fs.readFile('data/index.xml', (erro,dados)=>{
       if(!erro){
         var myObj = JSON.parse(parser.toJson(dados))
-        res.write(pug.renderFile('index.pug',{ind: myObj}))
+        res.write(pug.renderFile('views/index.pug',{ind: myObj}))
       }else{
         res.write('<p><b>ERRO: </b> ' + erro + '</p>')
       }
@@ -33,9 +33,9 @@ http.createServer( (req,res) =>{
     console.log("A ler o ficheiro " + ficheiro)
 
     res.writeHead(200,{'Content-Type':'text/html'})
-    fs.readFile('', (erro,dados)=>{
+    fs.readFile('data/json/'+ficheiro, (erro,dados)=>{
       if(!erro){
-        res.write(pug.renderFile('template.json',{arq: dados}))
+        res.write(pug.renderFile('views/template.json',{arq: dados}))
       }else{
         res.write('<p><b>ERRO: </b> ' + erro + '</p>')
       }
