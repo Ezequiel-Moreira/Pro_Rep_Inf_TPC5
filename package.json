@@ -1,0 +1,25 @@
+{
+  "name": "tpc5",
+  "version": "1.0.0",
+  "description": "Serve para resolução do TPC5",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "Ezequiel Moreira",
+  "license": "ISC",
+  "dependencies": {
+    "pug": "^2.0.3",
+    "xml2json": "^0.11.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ezequiel-Moreira/Pro_Rep_Inf_TPC5.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ezequiel-Moreira/Pro_Rep_Inf_TPC5/issues"
+  },
+  "homepage": "https://github.com/Ezequiel-Moreira/Pro_Rep_Inf_TPC5#readme"
+}
