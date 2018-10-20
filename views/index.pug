@@ -10,7 +10,9 @@ block corpo
                     tr
                         th Titulo
                         th Link
-                    each musica in ind.index.musica
+                    - var lista = ind.index.musica
+                    - lista.sort((a,b)=>{if(a.titulo<b.titulo) return -1; if(a.titulo>b.titulo) return 1; return 0;})
+                    each musica in lista
                         tr 
                             td= musica.titulo 
                             td
