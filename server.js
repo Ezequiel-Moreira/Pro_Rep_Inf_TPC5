@@ -35,7 +35,7 @@ http.createServer( (req,res) =>{
     res.writeHead(200,{'Content-Type':'text/html'})
     fs.readFile('data/json/'+ficheiro, (erro,dados)=>{
       if(!erro){
-        res.write(pug.renderFile('views/template.json',{arq: dados}))
+        res.write(pug.renderFile('views/template.json',{fich: dados}))
       }else{
         res.write('<p><b>ERRO: </b> ' + erro + '</p>')
       }

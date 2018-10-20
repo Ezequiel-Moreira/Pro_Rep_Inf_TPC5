@@ -10,7 +10,9 @@ fs.readdir(folder,(erro,ficheiros)=>{
     var id = parsedJSON._id
     var titulo = parsedJSON.titulo
     fs.appendFile(dest,
-    '\t<id>' + id + '</id>' + '\n' + '\t<titulo>' +titulo + '</titulo>\n\n'
+    '\t<musica>\n' +
+    '\t\t<id>' + id + '</id>' + '\n' + '\t\t<titulo>' +titulo + '</titulo>\n' +
+    '\t</musica>\n\n'
     ,(erro)=>{
       if(erro){console.log(erro)}        
     })
