@@ -6,6 +6,44 @@ block corpo
             header.w3-container.w3-light-grey
                 h3 Dados do ficheiro
             .w3-container
-              p fich._id
-						footer.w3-container.w3-light-grey
-								address Criado por Ezequiel Moreira
+              table.w3-table.w3-all
+                tr
+                  th Titulo
+                  td=fich.titulo
+                tr
+                  th Tipo
+                  td=fich.tipo
+                tr
+                  th Compositor
+                  td=fich.compositor
+                tr 
+                  th Arranjo
+                  td
+                    if fich.arranjo
+                      p=fich.arranjo
+                tr
+                  th Lista de instrumentos
+                  td                    
+                    ul
+                      each instrumento in fich.instrumentos
+                        li=instrumento.nome 
+                          .w3-container
+                            table.w3-table.w3-all
+                              if instrumento.partitura.path
+                                tr
+                                  th Path
+                                  td=instrumento.partitura.path
+                              if instrumento.partitura.voz
+                                tr
+                                  th Voz
+                                  td=instrumento.partitura.voz
+                              if instrumento.partitura.clave
+                                tr
+                                  th Clave
+                                  td=instrumento.partitura.clave
+                              if instrumento.partitura.afinacao
+                                tr
+                                  th Afinacao
+                                  td=instrumento.partitura.afinacao
+            footer.w3-container.w3-light-grey
+              address Criado por Ezequiel Moreira

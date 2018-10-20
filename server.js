@@ -13,7 +13,7 @@ var server=7000
 http.createServer( (req,res) =>{
   var parsedURL=url.parse(req.url,true)
 
-  console.log('recebi um pedido ' + parsedURL)
+  console.log('recebi um pedido ')
 
   if(index.test(parsedURL.pathname)){
     res.writeHead(200,{'Content-Type':'text/html'})
@@ -35,7 +35,8 @@ http.createServer( (req,res) =>{
     res.writeHead(200,{'Content-Type':'text/html'})
     fs.readFile('data/json/'+ficheiro, (erro,dados)=>{
       if(!erro){
-        res.write(pug.renderFile('views/template.json',{fich: dados}))
+        var myObj=JSON.parse(dados)
+        res.write(pug.renderFile('views/template.pug',{fich: myObj}))
       }else{
         res.write('<p><b>ERRO: </b> ' + erro + '</p>')
       }

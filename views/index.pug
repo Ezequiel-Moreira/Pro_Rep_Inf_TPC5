@@ -10,11 +10,11 @@ block corpo
                     tr
                         th Titulo
                         th Link
-                    each c in ind.index
+                    each musica in ind.index.musica
                         tr 
-                            td= c.titulo
+                            td= musica.titulo 
                             td
-                                a(href='http://localhost:5000/obra/' + c.id)= c.titulo
-                        footer.w3-container.w3-light-grey
-                            address Criado por Ezequiel Moreira
+                                a(href='http://localhost:7000/obra/' + musica.id)= musica.titulo
+            footer.w3-container.w3-light-grey
+                address Criado por Ezequiel Moreira
 
